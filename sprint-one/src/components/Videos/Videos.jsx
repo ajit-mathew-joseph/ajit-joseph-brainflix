@@ -6,17 +6,15 @@ import React from 'react'
 
 class Video extends React.Component {
     
-    consoleId = event => {
+    stateUpdater = event => {
         let index = VideoArray.findIndex(i => i.id === this.props.id);
-        console.log(this.props.id, index);
-        // console.log(VideoArray);
         this.props.update(index);
     }
 
     render() {
         return (
         <>
-            <a className="VideoList__link" onClick={event => this.consoleId(event)} id={this.props.id}>
+            <a className="VideoList__link" onClick={event => this.stateUpdater(event)} id={this.props.id}>
                 <div className="VideoList__container">
                     <div className="VideoList__image-container">
                     <img className="VideoList__image" src={this.props.image}/>

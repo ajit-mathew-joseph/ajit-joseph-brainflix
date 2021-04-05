@@ -60,5 +60,9 @@
     @include tablet() {
         margin: 12% 0% 0%;
     }
+
+    @include desktop() {
+        margin: 7% 0% 0%;
+    }
 }
 
