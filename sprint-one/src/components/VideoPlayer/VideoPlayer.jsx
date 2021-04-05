@@ -6,7 +6,7 @@ function VideoPlayer(props) {
     return (
     <>
         <section className="video-player">
-            <video controls poster={props.image}></video>
+            <video className="video-player__video" controls poster={props.image}></video>
         </section>
     </>
     );

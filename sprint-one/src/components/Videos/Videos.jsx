@@ -1,20 +1,36 @@
 import App from '../../App';
 import './Videos.scss';
 import VideoList from '../VideoList/VideoList'
+import VideoArray from '../../data/data'
+import React from 'react'
 
-function Video(props) {
-    return (
-    <>
-        <a className="VideoList__link" onClick="#">
-            <div className="VideoList__container">
-                <p>{props.id}</p>
-                <img className="VideoList__image" src={props.image}/>
-                <p className="VideoList__title">{props.title}</p>
-                <p className="VideoList__author">{props.uploader}</p>
-            </div>
-        </a>
-    </>
-    );
+class Video extends React.Component {
+    
+    consoleId = event => {
+        let index = VideoArray.findIndex(i => i.id === this.props.id);
+        console.log(this.props.id, index);
+        // console.log(VideoArray);
+        this.props.update(index);
+    }
+
+    render() {
+        return (
+        <>
+            <a className="VideoList__link" onClick={event => this.consoleId(event)} id={this.props.id}>
+                <div className="VideoList__container">
+                    <div className="VideoList__image-container">
+                    <img className="VideoList__image" src={this.props.image}/>
+                    </div>
+                    <div className="VideoList__text-container">
+                        <p className="VideoList__title">{this.props.title}</p>
+                        <p className="VideoList__author">{this.props.uploader}</p>
+                    </div>
+                </div>
+            </a>
+        </>
+        )
+    }
 }
 
 export default Video;
+

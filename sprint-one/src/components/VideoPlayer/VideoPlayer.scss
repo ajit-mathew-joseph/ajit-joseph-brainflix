@@ -1,0 +1,9 @@
+.video-player {
+    width: 100%;
+}
+
+.video-player__video {
+    max-height: 200px;
+    width: 100%;
+    object-fit: cover;
+}

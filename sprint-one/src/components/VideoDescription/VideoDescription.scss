@@ -1,0 +1,124 @@
+/* Partials Load-in */
+
+@use '../../partials/fonts' as *;
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
+
+/* Media Queries */ 
+
+@mixin tablet {
+    @media (min-width: $tabletBreakPoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktopBreakPoint) {
+        @content;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+body {
+    margin: 0;
+}
+
+.video-description__summary-container {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: $mobilePadding;
+    box-sizing: border-box;
+}
+
+.video-description__title {
+    width: 100%;
+    text-align: left;
+    font-family: 'AvenirNextLTPro';
+    color: $textColor1;
+    margin: 5% 0% 0%;
+}
+
+.video-description__upload-container {
+    margin: 1% 0% 0%;
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+    height: 40px;
+}
+
+.video-description__uploader {
+    margin: 0% 5% 0% 0%;
+    font-family: 'AvenirNextLTPro';
+    color: $textColor1;
+    font-size: 1.1rem;
+
+}
+
+.video-description__upload-date {
+    font-family: 'AvenirNextLTPro';
+    color: $textColor3;
+    font-size: 1rem;
+    font-weight: 300;
+
+}
+
+.video-description__share-container {
+    margin: 0% 0% 0%;
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+    border-bottom: 2px solid $elementColor3;
+}
+
+.video-description__views-container {
+    margin: 0% 0% 0%;
+    display: flex;
+    align-items: center;
+    width: 45%;
+}
+
+.video-description__views-image {
+    margin: 0% 6% 0% 0%;
+    width: 25px;
+}
+
+.video-description__views-total {
+    font-family: 'AvenirNextLTPro';
+    color: $textColor1;
+    font-weight: 300;
+}
+
+.video-description__likes-container {
+    margin: 0% 0% 0%;
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+.video-description__likes-image {
+    margin: 0% 6% 0% 0%;
+    width: 20px;
+}
+
+.video-description__likes-total {
+    font-family: 'AvenirNextLTPro';
+    color: $textColor1;
+    font-weight: 300;
+}
+
+.video-description__description-container {
+    padding: $mobilePadding;
+    text-align: left;
+}
+
+.video-description__description {
+    font-family: 'AvenirNextLTPro';
+    color: $textColor1;
+    font-weight: 200;
+    font-size: 0.95rem;
+}

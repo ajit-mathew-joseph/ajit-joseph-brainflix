@@ -9,8 +9,18 @@ import VideoPlayer from './components/VideoPlayer/VideoPlayer';
 import VideoArray from './data/data';
 
 class App extends React.Component {
-  state = {
-    index: 0
+  constructor() {
+    super();
+    this.updateState = this.updateState.bind(this);
+    this.state = {
+      index: 0
+    }
+  }
+  
+  updateState(index) { 
+    this.setState({
+      index: index
+    })
   }
 
   render() {
@@ -18,10 +28,11 @@ class App extends React.Component {
       <div className="App">
         <NavBar />
         <VideoPlayer image={VideoArray[this.state.index].image}/>
-        <VideoDescription title={VideoArray[this.state.index].title} uploader={VideoArray[this.state.index].channel} uploadDate={new Date(VideoArray[this.state.index].timestamp).toLocaleDateString()} 
-        views={VideoArray[this.state.index].views} likes={VideoArray[this.state.index].likes}  description={VideoArray[this.state.index].description}/>
+        <VideoDescription title={VideoArray[this.state.index].title} uploader={VideoArray[this.state.index].channel} 
+        uploadDate={new Date(VideoArray[this.state.index].timestamp).toLocaleDateString()} views={VideoArray[this.state.index].views} 
+        likes={VideoArray[this.state.index].likes}  description={VideoArray[this.state.index].description}/>
         <Form videoarray={VideoArray[this.state.index].comments}/>
-        <VideoList videolist={VideoArray}/>
+        <VideoList videolist={VideoArray} update={this.updateState}/>
       </div>
     );
   }

@@ -1,0 +1,60 @@
+/* Partials Load-in */
+
+@use '../../partials/fonts' as *;
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
+
+/* Media Queries */ 
+
+@mixin tablet {
+    @media (min-width: $tabletBreakPoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktopBreakPoint) {
+        @content;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+body {
+    margin: 0;
+}
+
+.VideoList__container {
+    display: flex;
+    height: 100px;
+}
+
+.VideoList__id {
+    display: none;
+}
+
+.VideoList__image {
+    width: 120px;
+    height: 80px;
+    border-radius: 5px;
+    background-image: cover;
+}
+
+.VideoList__text-container {
+    margin: 0% 0% 0% 5%;
+    width: 100%;
+}
+
+.VideoList__title {
+    margin: 0%;
+    text-align: left;
+}
+
+.VideoList__author {
+    margin: 5% 0% 0%;
+    font-weight: 200;
+    text-align: left;
+}
+
