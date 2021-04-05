@@ -41,4 +41,10 @@ body {
         width: 90%;
     }
 
+    @include desktop() {
+        width: 65%;
+        padding: $desktopPadding;
+        max-height: 700px;
+    }
+
 }

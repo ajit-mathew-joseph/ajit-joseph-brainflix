@@ -16,9 +16,11 @@ function Form(props) {
                     </div>
 
                     <div className="form__text-container">
-                        <p className="form__title">JOIN THE CONVERSATION</p>
-                        <textarea class="form__text-box" name="commentInput"
-                                placeholder="Write Comment here" required></textarea>
+                        <div className="form__text-subcontainer">
+                            <p className="form__title">JOIN THE CONVERSATION</p>
+                            <textarea class="form__text-box" name="commentInput"
+                                    placeholder="Write Comment here" required></textarea>
+                        </div>
                         <button type="submit" className="form__submit-button">COMMENT</button>
                     </div>
                 </form>

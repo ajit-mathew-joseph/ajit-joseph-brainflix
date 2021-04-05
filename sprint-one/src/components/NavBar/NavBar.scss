@@ -34,6 +34,10 @@ body {
     @include tablet() {
         padding: $tabletPadding;
     }
+
+    @include desktop() {
+        padding: $desktopPadding;
+    }
 }
 
 .nav-bar {
@@ -54,6 +58,11 @@ body {
     @include tablet() {
         width: 20%;
     }
+
+    @include desktop() {
+        width: 20%;
+        margin: 3% 0% 2%;
+    }
 }
 
 .nav-bar__logo {
@@ -61,6 +70,11 @@ body {
 
     @include tablet() {
         width: 100%;
+    }
+
+    @include desktop() {
+        width: 80%;
+        margin-bottom: 5%;
     }
 }
 

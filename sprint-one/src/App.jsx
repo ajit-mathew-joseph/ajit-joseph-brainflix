@@ -28,11 +28,17 @@ class App extends React.Component {
       <div className="App">
         <NavBar />
         <VideoPlayer image={VideoArray[this.state.index].image}/>
-        <VideoDescription title={VideoArray[this.state.index].title} uploader={VideoArray[this.state.index].channel} 
-        uploadDate={new Date(VideoArray[this.state.index].timestamp).toLocaleDateString()} views={VideoArray[this.state.index].views} 
-        likes={VideoArray[this.state.index].likes}  description={VideoArray[this.state.index].description}/>
-        <Form videoarray={VideoArray[this.state.index].comments}/>
-        <VideoList videolist={VideoArray} update={this.updateState}/>
+        <section className="desktop-container">
+          <section className="desktop-container__video">
+          <VideoDescription title={VideoArray[this.state.index].title} uploader={VideoArray[this.state.index].channel} 
+          uploadDate={new Date(VideoArray[this.state.index].timestamp).toLocaleDateString()} views={VideoArray[this.state.index].views} 
+          likes={VideoArray[this.state.index].likes}  description={VideoArray[this.state.index].description}/>
+          <Form videoarray={VideoArray[this.state.index].comments}/>
+          </section>
+          <section className="desktop-container__video-list">
+            <VideoList videolist={VideoArray} update={this.updateState}/>
+          </section>
+        </section>
       </div>
     );
   }
