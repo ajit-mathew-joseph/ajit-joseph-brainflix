@@ -31,7 +31,9 @@ function VideoDescription(props) {
                 
             </div>
             <div className="video-description__description-container">
+                <div className="video-description__description-subcontainer">
                 <p className="video-description__description">{props.description}</p>
+                </div>
             </div>
         </section>
     </>

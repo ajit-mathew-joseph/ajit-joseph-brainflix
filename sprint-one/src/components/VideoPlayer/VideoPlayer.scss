@@ -1,9 +1,44 @@
+/* Partials Load-in */
+
+@use '../../partials/fonts' as *;
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
+
+/* Media Queries */ 
+
+@mixin tablet {
+    @media (min-width: $tabletBreakPoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktopBreakPoint) {
+        @content;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+body {
+    margin: 0;
+}
+
 .video-player {
     width: 100%;
+    background-color: #000;
 }
 
 .video-player__video {
     max-height: 200px;
     width: 100%;
     object-fit: cover;
+
+    @include tablet() {
+        max-height: 400px;
+        width: 90%;
+    }
+
 }
