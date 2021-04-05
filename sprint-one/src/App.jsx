@@ -8,6 +8,8 @@ import VideoList from './components/VideoList/VideoList';
 import VideoPlayer from './components/VideoPlayer/VideoPlayer';
 import VideoArray from './data/data';
 
+/* Page might load with a white border on the side. Reloading the page will fix the issue -- rendering issue */
+
 class App extends React.Component {
   constructor() {
     super();

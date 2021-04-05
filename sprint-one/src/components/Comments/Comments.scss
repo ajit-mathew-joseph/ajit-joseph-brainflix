@@ -16,15 +16,6 @@
     }
 }
 
-ul {
-    list-style-type: none;
-}
-
-body {
-    margin: 0;
-    font-family: 'AvenirNextLTPro';
-}
-
 .comments {
     padding: $mobilePadding;
 
@@ -58,6 +49,11 @@ body {
     @include tablet() {
         width: 10%;
         margin: 5% 0% 0%;
+    }
+
+    @include desktop() {
+        width: 10%;
+        margin: 5% 2% 0% 0%;
     }
 }
 
