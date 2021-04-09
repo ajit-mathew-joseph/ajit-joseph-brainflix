@@ -1,0 +1,144 @@
+/* Partials Load-in */
+
+@use '../../partials/fonts' as *;
+@use '../../partials/mixins' as *;
+
+/* Media Queries */ 
+
+@mixin tablet {
+    @media (min-width: $tabletBreakPoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktopBreakPoint) {
+        @content;
+    }
+}
+
+.upload-form {
+    margin: 0% 0% 0%;
+    padding: $mobilePadding;
+    border-top: 2px solid $elementColor3;
+
+    @include tablet() {
+        margin: 2% 0% 0%;
+    }
+
+    @include desktop() {
+        width: 100%;
+        overflow: hidden;
+
+    }
+}
+
+.upload-form__title {
+    font-family: 'AvenirNextLTPro';
+    font-weight: 700;
+    font-size: 1.8rem;
+    text-align: left;
+    margin: 8% 0% 0%;
+}
+
+.upload-form__thumbnail-title {
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-align: left;
+    color: $textColor3;
+}
+
+.upload-form__thumbnail-image {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.upload-form__text-container {
+    padding: 0rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.upload-form__input-title {
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-align: left;
+    color: $textColor3;
+    margin: 5% 0% 0%;
+}
+
+.upload-form__input--video-title{
+    width: 98%;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid $elementColor3;
+    margin: 0%;
+    font-size: $smallFont4;
+    color: $textColor1;
+    background-color: $backgroundColor3;
+    margin: 1% 0% 5%;
+    font-weight: 300;
+}
+
+.upload-form__input--video-title::placeholder {
+    padding: 0rem 0rem 0rem 0.5rem;
+    color: $textColor1;
+}
+
+.upload-form__input--video-description {
+    width: 98%;
+    height: 150px;
+    border-radius: 5px;
+    border: 2px solid $elementColor3;
+    margin: 0%;
+    font-size: $smallFont4;
+    color: $textColor1;
+    background-color: $backgroundColor3;
+    margin: 1% 0% 5%;
+    font-weight: 300;
+}
+
+.upload-form__input--video-description::placeholder {
+    font-family: 'AvenirNextLTPro';
+    padding: 1rem 0rem 0rem 0.5rem;
+    color: $textColor1;
+}
+
+.upload-form__submit-button {
+    background-color: $backgroundColor6;
+    color: $textColor2;
+    font-size: 1rem;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    margin: 7% 0% 0%;
+    height: 50px;
+    font-weight: 700;
+
+    @include tablet() {
+        width: 35%;
+        margin: 0% 0% 0.5% 0%;
+    }
+}
+
+.upload-form__button-container {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.upload-form__cancel-button {
+    background-color: $backgroundColor2;
+    color: $textColor5;
+    font-size: 1rem;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    margin: 4% 0% 0%;
+    height: 50px;
+    font-weight: 700;
+
+    @include tablet() {
+        width: 35%;
+        margin: 0% 0% 0.5% 0%;
+    }
+}

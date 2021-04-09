@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import React from 'react';
 import './App.scss';
 import Form from './components/Form/Form';
@@ -29,7 +28,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <NavBar />
-        <VideoPlayer image={VideoArray[this.state.index].image}/>
+        <VideoPlayer image={VideoArray[this.state.index].image} video={VideoArray[this.state.index].video} />
         <section className="desktop-container">
           <section className="desktop-container__video">
           <VideoDescription title={VideoArray[this.state.index].title} uploader={VideoArray[this.state.index].channel} 
@@ -38,7 +37,7 @@ class App extends React.Component {
           <Form videoarray={VideoArray[this.state.index].comments}/>
           </section>
           <section className="desktop-container__video-list">
-            <VideoList videolist={VideoArray} update={this.updateState}/>
+            <VideoList videolist={VideoArray} update={this.updateState} data={this.state.index}/>
           </section>
         </section>
       </div>

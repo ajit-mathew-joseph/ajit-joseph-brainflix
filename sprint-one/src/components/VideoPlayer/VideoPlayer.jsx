@@ -1,12 +1,12 @@
-import App from '../../App';
 import './VideoPlayer.scss';
-import VideoArray from '../../data/data'
 
 function VideoPlayer(props) {
     return (
     <>
         <section className="video-player">
-            <video className="video-player__video" controls poster={props.image}></video>
+            <video className="video-player__video" controls poster={props.image} autoPlay>
+                <source src={props.video}></source>
+            </video>
         </section>
     </>
     );

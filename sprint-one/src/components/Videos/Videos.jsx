@@ -1,6 +1,4 @@
-import App from '../../App';
 import './Videos.scss';
-import VideoList from '../VideoList/VideoList'
 import VideoArray from '../../data/data'
 import React from 'react'
 
@@ -14,10 +12,10 @@ class Video extends React.Component {
     render() {
         return (
         <>
-            <a className="VideoList__link" onClick={event => this.stateUpdater(event)} id={this.props.id}>
+            <a className="VideoList__link" onClick={event => this.stateUpdater(event)} id={this.props.key}>
                 <div className="VideoList__container">
                     <div className="VideoList__image-container">
-                    <img className="VideoList__image" src={this.props.image}/>
+                    <img className="VideoList__image" src={this.props.image} alt="list of videos" />
                     </div>
                     <div className="VideoList__text-container">
                         <p className="VideoList__title">{this.props.title}</p>

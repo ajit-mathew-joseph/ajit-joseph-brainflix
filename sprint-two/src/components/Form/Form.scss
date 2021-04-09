@@ -1,0 +1,155 @@
+/* Partials Load-in */
+
+@use '../../partials/fonts' as *;
+@use '../../partials/mixins' as *;
+
+/* Media Queries */ 
+
+@mixin tablet {
+    @media (min-width: $tabletBreakPoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktopBreakPoint) {
+        @content;
+    }
+}
+
+.form {
+    margin: 0% 0% 0%;
+    padding: $mobilePadding;
+
+    @include tablet() {
+        margin: 2% 0% 0%;
+    }
+
+    @include desktop() {
+        width: 100%;
+        overflow: hidden;
+
+    }
+}
+
+.form__sub-section {
+    display: flex;
+    align-items: flex-start;
+    padding: 0rem 0rem 1.5rem 0rem;
+
+    @include tablet() {
+        padding: 0rem;
+    }
+
+    @include desktop() {
+        width: 100%;
+    }
+}
+
+.form__total-comments {
+    text-align: left;
+    width: 100%;
+    font-weight: 500;
+
+    @include tablet() {
+        margin: 2% 0% 0%;
+    }
+}
+
+.form__image-container {
+    width: 30%;
+    margin: 3.75% 4% 0% 0%;
+
+    @include tablet() {
+        width: 8%;
+        margin: 3.75% 2% 0% 0%;
+    }
+
+    @include tablet() {
+        width: 8%;
+        margin: 3.75% 5% 0% 0%;
+    }
+}
+
+.form__icon {
+    margin: 50% 0% 0%;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+.form__text-container {
+    margin: 5% 0% 0%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    @include tablet() {
+        width: 80%;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.form__text-subcontainer {
+    width: 100%;
+    margin: 0% 5% 0% 0%;
+}
+
+.form__title {
+    text-align: left;
+    font-weight: 500;
+    font-size: 0.85rem;
+    color: $textColor3;
+    margin: 0% 0% 1%;
+}
+
+.form__text-box::placeholder {
+    color: $textColor1;
+    padding: 0rem 0rem 2rem;
+    font-size: 0.75rem;
+    font-family: 'AvenirNextLTPro';
+}
+
+.form__text-box {
+    width: 90%;
+    height: 75px;
+    border-radius: 5px;
+    border: 2px solid $elementColor3;
+    padding: 1rem 0rem 0rem 1rem;
+    margin: 0%;
+    font-size: $smallFont4;
+    color: $textColor1;
+    background-color: $backgroundColor3;
+    margin: 1% 0% 5%;
+    font-weight: 300;
+
+    @include tablet() {
+        height: 30px;
+        width: 95%;
+    }
+}
+
+.form__text-box:focus {
+    border: 2px solid black;    
+}
+
+.form__submit-button {
+    background-color: $backgroundColor6;
+    color: $textColor2;
+    font-size: 1rem;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    height: 50px;
+    font-weight: 700;
+
+    @include tablet() {
+        width: 35%;
+        margin: 0% 0% 0.5% 0%;
+    }
+}
+
+// .form__submit-button:hover {
+//     background-color: $backgroundColor4;
+// }
