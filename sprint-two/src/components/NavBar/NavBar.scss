@@ -119,7 +119,7 @@
     background-color: $backgroundColor6;
     color: $textColor2;
     border-radius: 5px;
-    width: 77%;
+    width: 97%;
     border: none;
     height: 50px;
     font-family: 'AvenirNextLTPro';
@@ -131,7 +131,7 @@
     align-items: center;
 
     @include tablet() {
-        width: 65%;
+        width: 80%;
         height: 56px;
     }
 }
@@ -150,4 +150,7 @@
 }
 
 
-
+a {
+    text-decoration: none;
+    width: 100%;
+}
