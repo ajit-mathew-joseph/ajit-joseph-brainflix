@@ -1,7 +1,7 @@
 /* Partials Load-in */
 
-@use '../../partials/fonts' as *;
-@use '../../partials/mixins' as *;
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
 
 /* Media Queries */ 
 
@@ -16,6 +16,9 @@
         @content;
     }
 }
+
+/* Converting to BEM SASS Breaking certain elements -- Didn't have time to fix for this week, will be updating for Sprint #3 */
+
 .video-description__summary-container {
     display: flex;
     width: 100%;

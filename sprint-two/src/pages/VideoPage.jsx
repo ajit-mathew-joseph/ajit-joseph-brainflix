@@ -6,6 +6,8 @@ import VideoList from '../components/VideoList/VideoList';
 import VideoPlayer from '../components/VideoPlayer/VideoPlayer';
 import axios from 'axios';
 
+/* Attempted to incorporate as much feedback from Sprint 1 as possible -- some elements will be corrected for Sprint 3 due to time constraints and features breaking (might
+    need TA help) */
 
 class VideoPage extends React.Component {
     apiURL = "https://project-2-api.herokuapp.com";
@@ -37,12 +39,9 @@ class VideoPage extends React.Component {
 
     componentDidUpdate(prevProps) {
         if (this.props.location.pathname !== prevProps.location.pathname) {
-            console.log(this.props.match.params)
             if (this.props.match.url !== "/home") {
                 axios.get(this.apiURL + this.videolistURL + this.auth)
                     .then(res => {
-                        console.log(res.data);
-                        console.log(res.data.find(video => video.id === this.props.match.params.videoId))
                         this.setState(
                             {
                                 videoList: res.data.filter(video => video.id !== this.props.match.params.videoId),
@@ -76,6 +75,8 @@ class VideoPage extends React.Component {
 
         }
     }
+
+    // Converting Date outside assignment is breaking it -- will be looking into it pre-Sprint #3 Submission
 
     render() {
         if (!this.state.mainVideo) {

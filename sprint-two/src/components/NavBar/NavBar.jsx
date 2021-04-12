@@ -1,7 +1,7 @@
 import logo from '../../assets/images/Logo-brainflix.svg';
 import userIcon from '../../assets/images/Mohan-muruge.jpg';
 import './NavBar.scss';
-import {Link, Route} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 function NavBar() {

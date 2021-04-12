@@ -1,7 +1,6 @@
 import './VideoList.scss';
 import Video from '../Videos/Videos';
 import React from 'react'
-import axios from 'axios';
 
 class VideoList extends React.Component {            
 render() {
@@ -28,13 +27,3 @@ render() {
 }
 
 export default VideoList;
-
-// {console.log(VideoArray[this.props.data].id)}
-// {console.log(VideoArray.filter(video => video.id !== VideoArray[this.props.data].id))}
-// filter(video => video.id !== VideoArray[this.props.data].id)
-
-
-// if (this.props.match.params.videoId !== prevProps.match.params.videoId) {
-//     console.log(this.props.match.params.videoId);
-//     console.log(1);
-// }

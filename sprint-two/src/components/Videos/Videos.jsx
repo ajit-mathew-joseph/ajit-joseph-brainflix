@@ -1,21 +1,8 @@
 import './Videos.scss';
 import React from 'react'
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 
 class Video extends React.Component {
-    // updateState = (id) => {
-    //     this.props.update(id)
-    // }
-
-    apiURL = "https://project-2-api.herokuapp.com";
-    videolistURL = "/videos";
-    auth = "?api_key=2d2ff05a-49f9-40a5-9fe3-532053c12494";
-
-    // componentDidUpdate(prevProps, prevState) {
-    //     console.log(prevProps, prevState);
-    //     console.log(this.props);
-    // }
     render() {
         return (
             <>
@@ -35,15 +22,3 @@ class Video extends React.Component {
     }
 }
 export default Video;
-
-// onClick={() => this.updateState(this.props.id)}
-
-// axios.get(this.apiURL + this.videolistURL + "/" + this.props.id + this.auth)
-//             .then(res => {
-//                 console.log(res.data)
-//                 this.setState(
-//                     {
-//                         mainVideo: res.data
-//                     })
-//             }
-//         )

@@ -12,5 +12,3 @@ function VideoPlayer(props) {
 }
 
 export default VideoPlayer;
-
-// <source src={props.video}></source>

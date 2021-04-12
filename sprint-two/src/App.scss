@@ -1,7 +1,7 @@
 /* Partials Load-in */
 
-@use './partials/fonts' as *;
-@use './partials/mixins' as *;
+@use './styles/partials/fonts' as *;
+@use './styles/partials/mixins' as *;
 
 /* Media Queries */ 
 
@@ -35,17 +35,18 @@ body {
     display: flex;
     padding: $desktopPadding;
   }
-}
 
-.desktop-container__video {
-  @include desktop() {
-    width: 60%;
-    border-right: 2px solid $elementColor3;
+
+  &__video {
+    @include desktop() {
+      width: 60%;
+      border-right: 2px solid $elementColor3;
+    }
   }
-}
 
-.desktop-container__video-list {
-  @include desktop() {
-    width: 40%
+  &__video-list {
+    @include desktop() {
+      width: 40%
+    }
   }
 }
