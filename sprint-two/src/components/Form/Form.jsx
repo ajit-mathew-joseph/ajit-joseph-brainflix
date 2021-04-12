@@ -2,13 +2,17 @@ import './Form.scss';
 import Comments from '../Comments/Comments';
 import UserIcon from '../../assets/images/Mohan-muruge.jpg'
 
+
 function Form(props) {
+    let SubmitForm = (e) => {
+        e.preventDefault();
+    }
     return (
         <>
             <section className="form">
                 <h3 className="form__total-comments">{props.videoarray.length} Comments</h3>
 
-                <form className="form__sub-section">
+                <form className="form__sub-section" onSubmit={(e) => SubmitForm(e)}>
                     <div className="form__image-container">
                         <img className="form__icon" src={UserIcon} alt="Icon of user"/>
                     </div>

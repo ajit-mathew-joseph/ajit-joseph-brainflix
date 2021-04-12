@@ -20,6 +20,8 @@ class VideoPage extends React.Component {
     }
 
     componentDidMount() {
+        document.title = "Watch Videos on Brainflix!"
+
         axios.get(this.apiURL + this.videolistURL + this.auth)
             .then(res => {
                 this.setState(
