@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "basic server file",
+  "main": "index.js",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajit-mathew-joseph/ajit-joseph-brainflix.git"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "Ajit Joseph",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajit-mathew-joseph/ajit-joseph-brainflix/issues"
+  },
+  "homepage": "https://github.com/ajit-mathew-joseph/ajit-joseph-brainflix#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "uuid": "^8.3.2"
+  }
+}

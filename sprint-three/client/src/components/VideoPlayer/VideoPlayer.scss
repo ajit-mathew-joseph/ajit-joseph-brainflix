@@ -1,0 +1,43 @@
+/* Partials Load-in */
+
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+/* Media Queries */ 
+
+@mixin tablet {
+    @media (min-width: $tabletBreakPoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktopBreakPoint) {
+        @content;
+    }
+}
+
+.video-player {
+    width: 100%;
+    background-color: #000;
+
+    &__video {
+        min-height: 200px;
+        max-height: 200px;
+        width: 100%;
+        object-fit: cover;
+
+        @include tablet() {
+            min-height: 400px;
+            max-height: 400px;
+            width: 90%;
+        }
+
+        @include desktop() {
+            width: 65%;
+            padding: $desktopPadding;
+            min-height: 550px;
+            max-height: 550px;
+        }
+    }
+}

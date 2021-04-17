@@ -1,0 +1,71 @@
+/* Partials Load-in */
+
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+/* Media Queries */ 
+
+@mixin tablet {
+    @media (min-width: $tabletBreakPoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktopBreakPoint) {
+        @content;
+    }
+}
+
+/* Converting to BEM SASS Breaking certain elements -- Didn't have time to fix for this week, will be updating for Sprint #3 */
+
+.VideoList__container {
+    display: flex;
+    height: 100px;
+}
+
+.VideoList__id {
+    display: none;
+}
+
+.VideoList__image {
+    width: 120px;
+    height: 80px;
+    border-radius: 5px;
+    background-image: cover;
+}
+
+.VideoList__text-container {
+    margin: 0% 0% 0% 5%;
+    width: 100%;
+
+    @include tablet() {
+        width: 25%;
+    }
+
+    @include desktop() {
+        width: 50%;
+    }
+}
+
+.VideoList__title {
+    margin: 0%;
+    text-align: left;
+    color: $textColor1;
+}
+
+.VideoList__author {
+    margin: 5% 0% 0%;
+    font-weight: 200;
+    text-align: left;
+    color: $textColor1;
+
+    @include tablet() {
+        margin: 12% 0% 0%;
+    }
+
+    @include desktop() {
+        margin: 7% 0% 0%;
+    }
+}
+

@@ -1,0 +1,52 @@
+/* Partials Load-in */
+
+@use './styles/partials/fonts' as *;
+@use './styles/partials/mixins' as *;
+
+/* Media Queries */ 
+
+@mixin tablet {
+    @media (min-width: $tabletBreakPoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktopBreakPoint) {
+        @content;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+body {
+    margin: 0;
+    font-family: 'AvenirNextLTPro';
+}
+
+.App {
+  text-align: center;
+}
+
+.desktop-container {
+  @include desktop() {
+    display: flex;
+    padding: $desktopPadding;
+  }
+
+
+  &__video {
+    @include desktop() {
+      width: 60%;
+      border-right: 2px solid $elementColor3;
+    }
+  }
+
+  &__video-list {
+    @include desktop() {
+      width: 40%
+    }
+  }
+}

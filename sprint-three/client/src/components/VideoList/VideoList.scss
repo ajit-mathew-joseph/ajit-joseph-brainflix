@@ -1,0 +1,41 @@
+/* Partials Load-in */
+
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+/* Media Queries */ 
+
+@mixin tablet {
+    @media (min-width: $tabletBreakPoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktopBreakPoint) {
+        @content;
+    }
+}
+
+.VideoList {
+    display: flex;
+    flex-direction: column;
+    padding: $mobilePadding;
+
+
+    &__main-title {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: $textColor3;
+        text-align: left;
+        margin: 0% 0% 10%;
+
+        @include tablet() {
+            margin: 0% 0% 5%;
+        }
+
+        @include desktop() {
+            margin: 10% 0% 10%;
+        }
+    }
+}

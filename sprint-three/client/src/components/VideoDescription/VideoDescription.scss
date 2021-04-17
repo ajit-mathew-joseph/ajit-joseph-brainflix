@@ -1,0 +1,215 @@
+/* Partials Load-in */
+
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+
+/* Media Queries */ 
+
+@mixin tablet {
+    @media (min-width: $tabletBreakPoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $desktopBreakPoint) {
+        @content;
+    }
+}
+
+/* Converting to BEM SASS Breaking certain elements -- Didn't have time to fix for this week, will be updating for Sprint #3 */
+
+.video-description__summary-container {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: $mobilePadding;
+    box-sizing: border-box;
+
+    @include tablet() {
+        padding: $tabletPadding;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+.video-description__title {
+    width: 100%;
+    text-align: left;
+    font-family: 'AvenirNextLTPro';
+    color: $textColor1;
+    margin: 5% 0% 0%;
+
+    @include tablet() {
+        font-size: 2.2rem;
+    }
+
+    @include desktop() {
+        font-size: 1.9rem;
+    }
+}
+
+.video-description__upload-container {
+    margin: 1% 0% 0%;
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+    height: 40px;
+
+    @include tablet() {
+        width: 65%;
+    }
+
+    @include desktop() {
+        width: 55%;
+    }
+}
+
+.video-description__uploader {
+    margin: 0% 5% 0% 0%;
+    font-family: 'AvenirNextLTPro';
+    color: $textColor1;
+    font-size: 1.1rem;
+
+}
+
+.video-description__upload-date {
+    font-family: 'AvenirNextLTPro';
+    color: $textColor3;
+    font-size: 1rem;
+    font-weight: 300;
+
+}
+
+.video-description__share-container {
+    margin: 0% 0% 0%;
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+    border-bottom: 2px solid $elementColor3;
+
+    @include tablet() {
+        width: 35%;
+        justify-content: space-between;
+        height: 40px;
+        border-bottom: none;
+    }
+
+    @include desktop() {
+        padding: 0rem 0rem;
+        width: 45%;
+        margin: 0.5% 0% 0%;
+    }
+}
+
+.video-description__views-container {
+    margin: 0% 0% 0%;
+    display: flex;
+    align-items: center;
+    width: 45%;
+
+    @include tablet() {
+        height: 65px;
+    }
+
+    @include desktop() {
+        height: 50px;
+        padding: 0rem;
+        margin: 0% 12% 0% 0%;
+    }
+}
+
+.video-description__views-image {
+    margin: 0% 6% 0% 0%;
+    width: 25px;
+
+    @include desktop() {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.video-description__views-total {
+    font-family: 'AvenirNextLTPro';
+    color: $textColor1;
+    font-weight: 300;
+
+    @include desktop() {
+        margin: 0%;
+    }
+}
+
+.video-description__likes-container {
+    margin: 0% 0% 0%;
+    display: flex;
+    align-items: center;
+    width: 50%;
+
+    @include tablet() {
+        height: 65px;
+    }
+
+    @include desktop() {
+        height: 50px;
+        padding: 0rem;
+    }
+}
+
+.video-description__likes-image {
+    margin: 0% 6% 0% 0%;
+    width: 20px;
+
+    @include desktop() {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.video-description__likes-total {
+    font-family: 'AvenirNextLTPro';
+    color: $textColor1;
+    font-weight: 300;
+
+    @include desktop() {
+        margin: 0%;
+    }
+}
+
+.video-description__description-container {
+    padding: $mobilePadding;
+    text-align: left;
+
+    @include desktop() {
+        border-top: 2px solid $elementColor3;
+    }
+}
+
+.video-description__description-subcontainer {
+    @include tablet() {
+        border-top: 2px solid $elementColor3;
+    }   
+
+    @include desktop() {
+        border-top: none;
+    }   
+}
+
+.video-description__description {
+    font-family: 'AvenirNextLTPro';
+    color: $textColor1;
+    font-weight: 200;
+    font-size: 0.95rem;
+
+    @include tablet() {
+        margin: 0%;
+        padding: 2rem 0rem 0rem;
+        width: 70%;
+    }
+
+    @include desktop() {
+        margin: 0% 0% 5%;
+        padding: 2rem 0rem 0rem;
+        width: 90%;
+    }
+}
