@@ -21,7 +21,9 @@
   "homepage": "https://github.com/ajit-mathew-joseph/ajit-joseph-brainflix#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "path": "^0.12.7",
     "uuid": "^8.3.2"
   }
 }

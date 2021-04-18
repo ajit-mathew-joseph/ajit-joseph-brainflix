@@ -8,7 +8,7 @@ function VideoPlayer(props) {
     <>
         <section className="video-player">
             <video className="video-player__video" controls poster={props.image} autoPlay="false">
-                <source src={props.video + "/" + auth} type="video/mp4"></source>
+                {/* <source src={props.video + "/" + auth} type="video/mp4"></source> */}
             </video>
         </section>
     </>

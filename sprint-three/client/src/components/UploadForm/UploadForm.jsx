@@ -1,12 +1,27 @@
 import './UploadForm.scss';
 import UploadImage from '../../assets/images/Upload-video.jpg'
 import React from 'react';
+import axios from 'axios';
 
-function UploadForm() {
+function UploadForm(props) {
+    let expressURL = "http://localhost:8080"
+    let videolistURL = "/videos";
+
     let SubmitForm = (e) => {
         e.preventDefault();
         alert("Video Uploaded!");
-        this.props.router.history.push("/home");
+        console.log(e.target.titleInput.value);
+        console.log(e.target.descriptionInput.value);
+        axios.post(expressURL + videolistURL, 
+            {
+                title: e.target.titleInput.value,
+                description: e.target.descriptionInput.value
+            })
+        props.router.history.push("/home");
+    }
+
+    let buttonHandler = () => {
+        props.router.history.push("/home");
     }
 
     return (
@@ -30,7 +45,7 @@ function UploadForm() {
 
                             <div className="upload-form__text-container">
                                 <p className="upload-form__input-title">ADD A VIDEO DESCRIPTION</p>
-                                <textarea className="upload-form__input--video-description" type="text" name="titleInput"
+                                <textarea className="upload-form__input--video-description" type="text" name="descriptionInput"
                                     placeholder="Add a description of your video" required></textarea>
                             </div>
                         </div>
@@ -39,7 +54,7 @@ function UploadForm() {
 
                 <div className="upload-form__button-subsection">
                     <div className="upload-form__button-container">
-                        <button type="submit" className="upload-form__cancel-button">CANCEL</button>
+                        <button type="submit" className="upload-form__cancel-button" onClick={buttonHandler} >CANCEL</button>
                         <button type="submit" className="upload-form__submit-button">PUBLISH</button>
                     </div>
                 </div>

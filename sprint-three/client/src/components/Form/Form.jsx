@@ -7,6 +7,7 @@ function Form(props) {
     let SubmitForm = (e) => {
         e.preventDefault();
     }
+    
     return (
         <>
             <section className="form">

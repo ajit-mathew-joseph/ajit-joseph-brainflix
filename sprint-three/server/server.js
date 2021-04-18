@@ -1,13 +1,19 @@
 const express = require("express");
 const app = express();
-const videoList = require("./data/videos.json");
-const videoDetails = require("./data/video-details.json");
+const videoDetails = require("./data/videos.json");
 const  cors = require("cors");
 const uuid = require("uuid");
+const fs = require("fs");
+const path = require("path")
+require('dotenv').config();
+
+const {PORT, BACKEND_URL} = process.env
+console.log(PORT);
+console.log(BACKEND_URL);
 
 app.use(express.json());
 app.use(cors());
-app.use(express.static("../client/src/assets/images/Upload-video.jpg"));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function requestLog (req, res, next) {
     console.log('Time: ', Date.now())
@@ -15,7 +21,10 @@ app.use(function requestLog (req, res, next) {
 })
 
 app.get("/videos", (_req, res) => {
-    res.status(200).send(videoList);
+    let videoList = fs.readFileSync("./data/videos.json")
+    let parsedVideoList = JSON.parse(videoList)
+    compressedVideoList = parsedVideoList.map(video => ({id: video.id, title: video.title, channel: video.channel, image: video.image}))
+    res.status(200).send(JSON.stringify(compressedVideoList));
 })
 
 app.get("/videos/:id", (req, res) => {
@@ -26,17 +35,13 @@ app.get("/videos/:id", (req, res) => {
 
 app.post("/videos", (req, res) => {
     let vID = uuid.v4();
-    let uploadVideo = {
-        id: vID,
-        title: req.body.title,
-        channel: req.body.channel,
-        image: "../client/src/assets/images/Upload-video.jpg",
-    };
-
+    
     let videoDetail = {
         id: vID,
         title: req.body.title,
-        channel: req.body.channel,
+        channel: "My Channel",
+        image: "http://localhost:8080/images/Upload-video.jpg",
+        description: req.body.description,
         views: "0",
         likes: "0",
         duration: "5:00",
@@ -67,10 +72,17 @@ app.post("/videos", (req, res) => {
         ]
     }
 
-    videoList.push(uploadVideo);
-    videoDetails.push(videoDetail);
+    let videoDetailsData = fs.readFileSync("./data/videos.json")
 
-    res.status(201).send((uploadVideo, videoDetail));
+    let videoDetailsJS = JSON.parse(videoDetailsData)
+    videoDetailsJS.push(videoDetail);
+
+    fs.writeFile("./data/videos.json", JSON.stringify(videoDetailsJS, null, 2), function(err) {
+        if (err) {
+            console.log(err)}
+        console.log("new Video Added to Details")
+    })
+    res.status(201).send(videoDetail);
     
 });
 
