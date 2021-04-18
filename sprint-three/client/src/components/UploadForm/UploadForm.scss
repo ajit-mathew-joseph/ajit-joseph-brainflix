@@ -173,6 +173,7 @@
         margin: 1% 0% 5%;
         font-family: 'AvenirNextLTPro';
         font-weight: 300;
+        resize: none;
 
         @include tablet() {
             margin: 1% 0% 7%;

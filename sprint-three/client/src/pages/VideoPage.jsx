@@ -113,7 +113,7 @@ class VideoPage extends React.Component {
             return <div></div>
         }
 
-        let convDate = new Date(this.state.mainVideo.timestamp).toLocaleDateString()
+        let convDate = new Date(this.state.mainVideo.timestamp).toLocaleDateString();
 
         return (
             <>

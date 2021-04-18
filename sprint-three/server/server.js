@@ -40,7 +40,6 @@ app.post("/videos", (req, res) => {
         id: vID,
         title: req.body.title,
         channel: "My Channel",
-        image: "http://localhost:8080/images/Upload-video.jpg",
         description: req.body.description,
         views: "0",
         likes: "0",

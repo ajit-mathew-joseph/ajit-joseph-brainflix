@@ -15,7 +15,8 @@ function UploadForm(props) {
         axios.post(expressURL + videolistURL, 
             {
                 title: e.target.titleInput.value,
-                description: e.target.descriptionInput.value
+                description: e.target.descriptionInput.value,
+                image: "http://localhost:8080/images/Upload-video.jpg"
             })
         props.router.history.push("/home");
     }

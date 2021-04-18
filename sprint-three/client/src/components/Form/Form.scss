@@ -125,6 +125,7 @@
         font-weight: 300;
         overflow: hidden;
         font-family: 'AvenirNextLTPro';
+        resize: none;
 
         @include tablet() {
             height: 30px;
