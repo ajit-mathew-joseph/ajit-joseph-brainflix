@@ -10,8 +10,6 @@ function UploadForm(props) {
     let SubmitForm = (e) => {
         e.preventDefault();
         alert("Video Uploaded!");
-        console.log(e.target.titleInput.value);
-        console.log(e.target.descriptionInput.value);
         axios.post(expressURL + videolistURL, 
             {
                 title: e.target.titleInput.value,

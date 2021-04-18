@@ -15,6 +15,8 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Run Express Server using "node server.js" and React Server using "npm start"
+
 app.use(function requestLog (req, res, next) {
     console.log('Time: ', Date.now())
     next()
@@ -40,6 +42,7 @@ app.post("/videos", (req, res) => {
         id: vID,
         title: req.body.title,
         channel: "My Channel",
+        image: req.body.image,
         description: req.body.description,
         views: "0",
         likes: "0",

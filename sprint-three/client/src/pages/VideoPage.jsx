@@ -21,7 +21,6 @@ class VideoPage extends React.Component {
 
         axios.get(this.expressURL + this.videolistURL)
             .then(res => {
-                console.log(res.data)
                 this.setState(
                     {
                         videoList: res.data.filter(video => video.id !== res.data[0].id),
@@ -29,7 +28,6 @@ class VideoPage extends React.Component {
                     })
                 axios.get(this.expressURL + this.videolistURL + this.state.id)
                     .then(res => {
-                        console.log(res.data)
                         this.setState(
                             {
                                 mainVideo: res.data[0]
